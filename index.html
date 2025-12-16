@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معالي ليبيا للأحذية الفاخرة</title>
+    
+    <!-- Google Fonts: Amiri for Arabic Luxury, Playfair Display for English/Numbers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Config for Colors matching the uploaded image theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vintage-gold': '#C5A059',      /* Antique Gold */
+                        'vintage-gold-dark': '#9A7B3E', /* Darker Gold for hover */
+                        'leather-dark': '#3E2723',      /* Deep Leather Brown */
+                        'leather-light': '#5D4037',     /* Lighter Brown */
+                        'cream-bg': '#FDFBF7',          /* Vintage Paper/Cream */
+                        'charcoal': '#1C1C1C',          /* Soft Black */
+                    },
+                    fontFamily: {
+                        'arabic': ['Amiri', 'serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Amiri', serif;
+            background-color: #FDFBF7;
+            color: #1C1C1C;
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C5A059;
+            border-radius: 5px;
+        }
+
+        /* Hero Pattern Overlay */
+        .hero-pattern {
+            background-image: url("https://www.transparenttextures.com/patterns/black-scales.png");
+            opacity: 0.4;
+        }
+
+        /* Gold Border Effect */
+        .gold-border-box {
+            position: relative;
+            border: 1px solid #C5A059;
+            padding: 20px;
+        }
+        .gold-border-box::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 1px solid #C5A059;
+            pointer-events: none;
+        }
+
+        /* Fade In Animation classes */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body class="bg-cream-bg overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="bg-leather-dark text-vintage-gold py-4 shadow-lg sticky top-0 z-50 border-b-2 border-vintage-gold">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold tracking-wider hover:text-white transition duration-300 flex items-center gap-2">
+                <img src="logo.png" alt="معالي ليبيا" class="h-12 w-auto">
+                معالي ليبيا
+            </a>
+            
+            <div class="hidden md:flex gap-8 text-lg">
+                <a href="#home" class="hover:text-white transition duration-300">الرئيسية</a>
+                <a href="#partners" class="hover:text-white transition duration-300">شركاؤنا</a>
+                <a href="#collection" class="hover:text-white transition duration-300">البضائع</a>
+                <a href="#branches" class="hover:text-white transition duration-300">فروعنا</a>
+                <a href="#contact" class="hover:text-white transition duration-300">اتصل بنا</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-leather-light text-center py-4 absolute w-full left-0 top-full border-b border-vintage-gold">
+            <a href="#home" class="block py-2 hover:bg-leather-dark">الرئيسية</a>
+            <a href="#partners" class="block py-2 hover:bg-leather-dark">شركاؤنا</a>
+            <a href="#collection" class="block py-2 hover:bg-leather-dark">البضائع</a>
+            <a href="#branches" class="block py-2 hover:bg-leather-dark">فروعنا</a>
+            <a href="#contact" class="block py-2 hover:bg-leather-dark">اتصل بنا</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative h-[85vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2012&auto=format&fit=crop" alt="Luxury Shoes" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/60 hero-pattern"></div>
+        </div>
+
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl fade-in-section">
+            <div class="mb-4 text-vintage-gold text-xl tracking-[0.2em] font-serif uppercase"> </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-shadow-lg">
+                معالي ليبيا <br> 
+                <span class="text-3xl md:text-5xl font-light text-vintage-gold font-serif mt-2 block">للاستيراد والأحذية الفاخرة</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-200 mb-10 font-light leading-relaxed max-w-2xl mx-auto">
+                نجمع بين الأناقة الإسبانية والجودة العالمية. <br>
+                عنوانك الأول للفخامة في قلب طرابلس.
+            </p>
+            <a href="#collection" class="inline-block border-2 border-vintage-gold text-vintage-gold hover:bg-vintage-gold hover:text-leather-dark py-3 px-10 text-xl transition duration-300 rounded-sm">
+                تصفح المجموعة
+            </a>
+        </div>
+    </header>
+  <!-- About Section (New) -->
+    <section id="about" class="py-20 bg-cream-bg relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            
+            <!-- About Company -->
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-20 fade-in-section">
+                <div class="md:w-1/2">
+                    <div class="relative pl-8 border-r-4 border-vintage-gold pr-6">
+                        <span class="text-vintage-gold font-bold tracking-widest uppercase mb-2 block">قصتنا</span>
+                        <h2 class="text-4xl font-bold text-leather-dark mb-6">عراقة وأصالة تمتد لسنوات</h2>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                            تأسست شركة "معالي ليبيا" لتكون الجسر الذي يربط بين الذوق الأوروبي الرفيع والأصالة الليبية. نحن نختص باستيراد أرقى أنواع الأحذية من كبرى الدور العالمية، لنضع بين أيديكم منتجات تجمع بين الفخامة، المتانة، والراحة المطلقة.
+                        </p>
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            نحن لا نبيع مجرد أحذية، بل نقدم تجربة أناقة متكاملة تليق بعملائنا المميزين في طرابلس وكافة أنحاء ليبيا.
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="gold-border-box">
+                        <img src="https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?q=80&w=2070&auto=format&fit=crop" alt="Classic Shoe Crafting" class="w-full h-auto shadow-xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission & Vision Cards -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-12 fade-in-section">
+                <!-- Vision -->
+                <div class="bg-white p-8 shadow-lg border-t-4 border-vintage-gold hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-leather-dark text-vintage-gold w-12 h-12 flex items-center justify-center rounded-full text-xl">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-leather-dark">رؤيتنا</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        أن نكون الوجهة الأولى والمفضلة للأحذية الفاخرة في ليبيا وشمال أفريقيا، من خلال تقديم أحدث صيحات الموضة العالمية التي تلبي تطلعات الرجل والمرأة العصرية، مع الحفاظ على أعلى معايير الجودة.
+                    </p>
+                </div>
+
+                <!-- Mission -->
+                <div class="bg-white p-8 shadow-lg border-t-4 border-vintage-gold hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-leather-dark text-vintage-gold w-12 h-12 flex items-center justify-center rounded-full text-xl">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-leather-dark">رسالتنا</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        الالتزام بتوفير منتجات أصلية عالية الجودة تضمن راحة القدمين وأناقة المظهر. نسعى لبناء علاقات طويلة الأمد مع عملائنا وشركائنا (مثل XTI و Grendene) مبنية على الثقة، المصداقية، والتميز في الخدمة.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Partners Section (XTI & Grendene) -->
+    <section id="partners" class="py-20 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in-section">
+                <h2 class="text-4xl font-bold text-leather-dark mb-4">شركاؤنا في النجاح</h2>
+                <div class="w-24 h-1 bg-vintage-gold mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    نفتخر بكوننا الموزع المعتمد لأعرق العلامات التجارية العالمية التي تتميز بالجودة والراحة.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                
+                <!-- XTI Card -->
+                <div class="group fade-in-section">
+                    <div class="gold-border-box h-full bg-cream-bg hover:shadow-2xl transition duration-500 transform hover:-translate-y-2">
+                        <div class="h-48 flex items-center justify-center bg-white mb-6 border-b border-vintage-gold/20">
+                            <!-- Placeholder Logo styling -->
+                            <div class="text-4xl font-bold font-serif tracking-widest text-black">XTI <span class="text-sm block font-normal text-gray-500 text-center mt-1">SPAIN</span></div>
+                        </div>
+                        <div class="text-center px-4 pb-4">
+                            <h3 class="text-2xl font-bold text-leather-dark mb-3">XTI الإسبانية</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                علامة تجارية إسبانية رائدة، تجمع بين أحدث صيحات الموضة الأوروبية والجودة العالية. الخيار الأمثل لمن يبحث عن الأناقة العصرية.
+                            </p>
+                            <div class="mt-6">
+                                <span class="inline-block px-4 py-1 border border-leather-dark/30 text-leather-dark text-sm">أحذية نسائية</span>
+                                <span class="inline-block px-4 py-1 border border-leather-dark/30 text-leather-dark text-sm">حقائب</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grendene Card -->
+                <div class="group fade-in-section" style="transition-delay: 200ms;">
+                    <div class="gold-border-box h-full bg-cream-bg hover:shadow-2xl transition duration-500 transform hover:-translate-y-2">
+                        <div class="h-48 flex items-center justify-center bg-white mb-6 border-b border-vintage-gold/20">
+                            <!-- Placeholder Logo styling -->
+                            <div class="text-4xl font-bold font-serif tracking-widest text-black">Grendene <span class="text-sm block font-normal text-gray-500 text-center mt-1">GLOBAL</span></div>
+                        </div>
+                        <div class="text-center px-4 pb-4">
+                            <h3 class="text-2xl font-bold text-leather-dark mb-3">Grendene العالمية</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                واحدة من أكبر مصنعي الأحذية في العالم. تتميز بتصاميمها المبتكرة وتقنياتها المريحة التي تناسب جميع أفراد العائلة.
+                            </p>
+                            <div class="mt-6">
+                                <span class="inline-block px-4 py-1 border border-leather-dark/30 text-leather-dark text-sm">أحذية أطفال</span>
+                                <span class="inline-block px-4 py-1 border border-leather-dark/30 text-leather-dark text-sm">كاجوال</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Section (Goods) -->
+    <section id="collection" class="py-20 bg-cream-bg border-t border-vintage-gold/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="text-vintage-gold font-bold tracking-widest uppercase mb-2 block">تصفح الكتالوج</span>
+                <h2 class="text-4xl font-bold text-leather-dark">بضائعنا المميزة</h2>
+                <p class="text-gray-600 mt-4">تشكيلة مختارة بعناية لأصحاب الذوق الرفيع</p>
+            </div>
+
+            <!-- Filter Buttons (Visual Only) -->
+            
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Product 1 -->
+                <div class="group relative overflow-hidden shadow-lg cursor-pointer fade-in-section">
+                    <div class="aspect-[4/5] bg-gray-200 overflow-hidden">
+                        <img src="image (1).jpeg" alt="منتج 1" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-leather-dark/90 p-4 translate-y-full group-hover:translate-y-0 transition duration-300">
+                        <h4 class="text-vintage-gold text-xl font-bold">تشكيلة مميزة</h4>
+                        <p class="text-white text-sm">أحذية فاخرة</p>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group relative overflow-hidden shadow-lg cursor-pointer fade-in-section">
+                    <div class="aspect-[4/5] bg-gray-200 overflow-hidden">
+                        <img src="image (2).jpeg" alt="منتج 2" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-leather-dark/90 p-4 translate-y-full group-hover:translate-y-0 transition duration-300">
+                        <h4 class="text-vintage-gold text-xl font-bold">تشكيلة مميزة</h4>
+                        <p class="text-white text-sm">أحذية فاخرة</p>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group relative overflow-hidden shadow-lg cursor-pointer fade-in-section">
+                    <div class="aspect-[4/5] bg-gray-200 overflow-hidden">
+                        <img src="image (3).jpeg" alt="منتج 3" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-leather-dark/90 p-4 translate-y-full group-hover:translate-y-0 transition duration-300">
+                        <h4 class="text-vintage-gold text-xl font-bold">تشكيلة مميزة</h4>
+                        <p class="text-white text-sm">أحذية فاخرة</p>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="group relative overflow-hidden shadow-lg cursor-pointer fade-in-section">
+                    <div class="aspect-[4/5] bg-gray-200 overflow-hidden">
+                        <img src="image (4).jpeg" alt="منتج 4" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-leather-dark/90 p-4 translate-y-full group-hover:translate-y-0 transition duration-300">
+                        <h4 class="text-vintage-gold text-xl font-bold">تشكيلة مميزة</h4>
+                        <p class="text-white text-sm">أحذية فاخرة</p>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="group relative overflow-hidden shadow-lg cursor-pointer fade-in-section">
+                    <div class="aspect-[4/5] bg-gray-200 overflow-hidden">
+                        <img src="image (5).jpeg" alt="منتج 5" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-leather-dark/90 p-4 translate-y-full group-hover:translate-y-0 transition duration-300">
+                        <h4 class="text-vintage-gold text-xl font-bold">تشكيلة مميزة</h4>
+                        <p class="text-white text-sm">أحذية فاخرة</p>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="group relative overflow-hidden shadow-lg cursor-pointer fade-in-section">
+                    <div class="aspect-[4/5] bg-gray-200 overflow-hidden">
+                        <img src="image (6).jpeg" alt="منتج 6" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-leather-dark/90 p-4 translate-y-full group-hover:translate-y-0 transition duration-300">
+                        <h4 class="text-vintage-gold text-xl font-bold">تشكيلة مميزة</h4>
+                        <p class="text-white text-sm">أحذية فاخرة</p>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="group relative overflow-hidden shadow-lg cursor-pointer fade-in-section">
+                    <div class="aspect-[4/5] bg-gray-200 overflow-hidden">
+                        <img src="image (7).jpeg" alt="منتج 7" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-leather-dark/90 p-4 translate-y-full group-hover:translate-y-0 transition duration-300">
+                        <h4 class="text-vintage-gold text-xl font-bold">تشكيلة مميزة</h4>
+                        <p class="text-white text-sm">أحذية فاخرة</p>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="group relative overflow-hidden shadow-lg cursor-pointer fade-in-section">
+                    <div class="aspect-[4/5] bg-gray-200 overflow-hidden">
+                        <img src="image (8).jpeg" alt="منتج 8" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 bg-leather-dark/90 p-4 translate-y-full group-hover:translate-y-0 transition duration-300">
+                        <h4 class="text-vintage-gold text-xl font-bold">تشكيلة مميزة</h4>
+                        <p class="text-white text-sm">أحذية فاخرة</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Branches Section -->
+    <section id="branches" class="py-20 bg-white border-t border-vintage-gold/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in-section">
+                <span class="text-vintage-gold font-bold tracking-widest uppercase mb-2 block">شبكة فروعنا</span>
+                <h2 class="text-4xl font-bold text-leather-dark">انتشار واسع في خدمتكم</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">نفتخر بتواجدنا في أكثر من موقع لنكون أقرب إليكم ولتلبية احتياجاتكم بأعلى جودة</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Branches Card -->
+                <div class="fade-in-section">
+                    <div class="gold-border-box h-full bg-cream-bg text-center hover:shadow-2xl transition duration-500">
+                        <div class="bg-vintage-gold w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fa-solid fa-store text-4xl text-leather-dark"></i>
+                        </div>
+                        <h3 class="text-6xl font-bold text-leather-dark mb-2 font-serif">5</h3>
+                        <h4 class="text-2xl font-bold text-vintage-gold mb-4">فروع</h4>
+                        <p class="text-gray-600 leading-relaxed">
+                            خمسة فروع منتشرة لخدمتكم وتوفير أفضل تجربة تسوق مع تشكيلة متنوعة من أرقى الأحذية العالمية
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Warehouse Card -->
+                <div class="fade-in-section" style="transition-delay: 200ms;">
+                    <div class="gold-border-box h-full bg-cream-bg text-center hover:shadow-2xl transition duration-500">
+                        <div class="bg-vintage-gold w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fa-solid fa-warehouse text-4xl text-leather-dark"></i>
+                        </div>
+                        <h3 class="text-6xl font-bold text-leather-dark mb-2 font-serif">1</h3>
+                        <h4 class="text-2xl font-bold text-vintage-gold mb-4">مستودع</h4>
+                        <p class="text-gray-600 leading-relaxed">
+                            مستودع رئيسي مجهز بأحدث التقنيات لضمان توفر المنتجات وسرعة التوزيع لجميع فروعنا
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contact" class="bg-leather-dark text-white relative py-20">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            
+            <div class="fade-in-section">
+                <h2 class="text-4xl font-bold text-vintage-gold mb-6">زوروا معرضنا</h2>
+                <p class="mb-8 text-gray-300 text-lg leading-relaxed">
+                    يسعدنا استقبالكم في مقرنا الرئيسي للاطلاع على أحدث التشكيلات. فريقنا جاهز لخدمتكم وتلبية طلبات الجملة والموزعين.
+                </p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-vintage-gold p-3 rounded-full text-leather-dark">
+                            <i class="fa-solid fa-location-dot text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-vintage-gold">العنوان</h4>
+                            <p class="text-gray-300">ليبيا، طرابلس، حي الأندلس</p>
+                            <p class="text-gray-400 text-sm">بالقرب من السفارة العراقية</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="bg-vintage-gold p-3 rounded-full text-leather-dark">
+                            <i class="fa-solid fa-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-vintage-gold">اتصل بنا</h4>
+                            <p class="text-gray-300" dir="ltr">+218 9X XXXXXXX</p>
+                            <p class="text-gray-300" dir="ltr">+218 9X XXXXXXX</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="bg-vintage-gold p-3 rounded-full text-leather-dark">
+                            <i class="fa-solid fa-clock text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-vintage-gold">ساعات العمل</h4>
+                            <p class="text-gray-300">السبت - الخميس: 10:00 صباحاً - 9:00 مساءً</p>
+                            <p class="text-gray-300">الجمعة: 4:00 مساءً - 9:00 مساءً</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Map Placeholder -->
+            <div class="h-96 w-full bg-gray-200 rounded-lg overflow-hidden border-4 border-vintage-gold/50 shadow-2xl fade-in-section">
+                <!-- Using an iframe for Google Maps -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d13.143583!3d32.874722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDUyJzI5LjAiTiAxM8KwMDgnMzYuOSJF!5e0!3m2!1sen!2s!4v1625680000000!5m2!1sen!2s" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-center py-8 border-t border-vintage-gold/20 text-gray-400">
+        <p class="mb-2">&copy; 2025 شركة معالي ليبيا للأحذية. جميع الحقوق محفوظة.</p>
+        <div class="flex justify-center gap-4 mt-4 text-vintage-gold">
+            <a href="https://www.facebook.com/profile.php?id=100060033065063" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-facebook fa-lg"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram fa-lg"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="fa-brands fa-whatsapp fa-lg"></i></a>
+        </div>
+    </footer>
+
+    <!-- Floating Facebook Button -->
+    <a href="https://www.facebook.com/profile.php?id=100060033065063" target="_blank" class="fixed bottom-6 left-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-50">
+        <i class="fa-brands fa-facebook-f text-2xl"></i>
+    </a>
+
+    <!-- Simple Animation Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.fade-in-section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
